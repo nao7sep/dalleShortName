@@ -1,5 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
+using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace dalleShortName
@@ -13,6 +15,21 @@ namespace dalleShortName
         // To: DALL-E 2024-01-05 15.44.53.png
 
         // It also generates the JPEG version of the image.
+
+        private static readonly string LogFilePath = Path.ChangeExtension (Assembly.GetExecutingAssembly ().Location, ".log");
+
+        private static void WriteLineToLog (string text)
+        {
+            try
+            {
+                File.AppendAllText (LogFilePath, (File.Exists (LogFilePath) ? Environment.NewLine : string.Empty) + text + Environment.NewLine, Encoding.UTF8);
+            }
+
+            catch
+            {
+                // Do nothing.
+            }
+        }
 
         static void Main (string [] args)
         {
@@ -51,6 +68,9 @@ namespace dalleShortName
                     {
                         File.Move (xFilePath, xNewFilePath);
                         Console.WriteLine ("Renamed to: " + xNewFileName);
+
+                        // The original file names are the only info that might be needed again.
+                        WriteLineToLog ($"Renamed from: {Path.GetFileName (xFilePath)}{Environment.NewLine}To: {xNewFileName}");
                     }
 
                     catch
