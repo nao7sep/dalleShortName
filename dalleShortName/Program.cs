@@ -18,11 +18,11 @@ namespace dalleShortName
 
         private static readonly string LogFilePath = Path.ChangeExtension (Assembly.GetExecutingAssembly ().Location, ".log");
 
-        private static void WriteLineToLog (string text)
+        private static void WriteLineToLog (string str)
         {
             try
             {
-                File.AppendAllText (LogFilePath, (File.Exists (LogFilePath) ? Environment.NewLine : string.Empty) + text + Environment.NewLine, Encoding.UTF8);
+                File.AppendAllText (LogFilePath, (File.Exists (LogFilePath) ? Environment.NewLine : string.Empty) + str + Environment.NewLine, Encoding.UTF8);
             }
 
             catch

@@ -1,0 +1,15 @@
+﻿[Delete]
+App
+
+[Copy]
+dalleShortName/bin/Release/net6.0-windows > App
+
+[Delete]
+App/dalleShortName.log
+App/dalleShortName.pdb
+
+[Exclude]
+.git
+.vs
+dalleShortName/bin
+dalleShortName/obj
