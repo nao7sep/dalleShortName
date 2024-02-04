@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace dalleShortName
+namespace yyDalleShortName
 {
     internal partial class Program
     {

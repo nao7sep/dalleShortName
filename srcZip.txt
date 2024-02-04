@@ -2,14 +2,14 @@
 App
 
 [Copy]
-dalleShortName/bin/Release/net8.0-windows > App
+yyDalleShortName/bin/Release/net8.0-windows > App
 
 [Delete]
-App/dalleShortName.log
-App/dalleShortName.pdb
+App/yyDalleShortName.log
+App/yyDalleShortName.pdb
 
 [Exclude]
 .git
 .vs
-dalleShortName/bin
-dalleShortName/obj
+yyDalleShortName/bin
+yyDalleShortName/obj
