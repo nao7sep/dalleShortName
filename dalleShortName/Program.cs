@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace dalleShortName
 {
-    internal class Program
+    internal partial class Program
     {
         // A simple program to simplify file names by DALL-E.
 
@@ -31,6 +31,9 @@ namespace dalleShortName
             }
         }
 
+        [GeneratedRegex (@"^(?<FirstPart>DALL·E [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}\.[0-9]{2}\.[0-9]{2}).+?$", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase)]
+        private static partial Regex FirstPartRegex ();
+
         static void Main (string [] args)
         {
             try
@@ -51,8 +54,7 @@ namespace dalleShortName
 
                     string xFileNameWithoutExtension = Path.GetFileNameWithoutExtension (xFilePath);
 
-                    Match xMatch = Regex.Match (xFileNameWithoutExtension, @"^(?<FirstPart>DALL·E [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}\.[0-9]{2}\.[0-9]{2}).+?$",
-                        RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+                    Match xMatch = FirstPartRegex ().Match (xFileNameWithoutExtension);
 
                     if (xMatch.Success == false)
                     {

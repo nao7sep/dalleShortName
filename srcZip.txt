@@ -2,7 +2,7 @@
 App
 
 [Copy]
-dalleShortName/bin/Release/net6.0-windows > App
+dalleShortName/bin/Release/net8.0-windows > App
 
 [Delete]
 App/dalleShortName.log
