@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yyDalleShortName", "yyDalleShortName\yyDalleShortName.csproj", "{B3BA3312-F463-4944-BEDB-8FBE6BE25575}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dalleShortName", "dalleShortName\dalleShortName.csproj", "{B3BA3312-F463-4944-BEDB-8FBE6BE25575}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
